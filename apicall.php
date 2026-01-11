@@ -36,7 +36,7 @@ function fetch_cat_fact()
     $env = parse_ini_file(__DIR__ . '/.env');
     $API_KEY = $env['API_KEY'];
 
-    $url = "https://api.thecatapi.com/v1/images/search";
+    $url = "https://www.catfacts.net/api/";
 
     $ch = curl_init($url);
 
@@ -58,6 +58,6 @@ function fetch_cat_fact()
     curl_close($ch);
 
     // JSON → Array
-    $arr = json_decode($response, true);
-    return $data = $arr[0];
+    $obj = json_decode($response, true);
+    return $obj["facts"][0];
 }

@@ -6,6 +6,8 @@ if (isset($_POST['run'])) {
 } else {
     $data = fetch_cat_image(); // erstes Laden
 }
+
+$fact = fetch_cat_fact();
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +33,8 @@ if (isset($_POST['run'])) {
             </form>
         </div>
         <div id="text_container">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum asperiores ipsum facere magna Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora illum, quaerat omnis fugit facere, in doloremque fugiat eveniet totam exercitationem debitis alias at ipsa rerum minus aperiam! Rem, neque adipisci.
+            <h2>🐱Fact of the day🐱</h2> <br>
+            <?= $fact["fact"] ?>
         </div>
     </div>
 
